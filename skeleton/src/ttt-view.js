@@ -28,11 +28,39 @@ class View {
 
   handleClick(event) {
     // debugger
-    console.log(JSON.parse(event.target.attributes.pos.value))
+    const selectedSpot = JSON.parse(event.target.attributes.pos.value)
+    try {
+      this.makeMove(selectedSpot);
+    }
+    catch(err){
+      window.alert("Invalid Move")
+    }
+    const update = new Promise((resolve) => {
+      if(true){
+        resolve(event.target.innerText = this.game.currentPlayer)
+      }
+    })
+
+    update.then(setTimeout(() => {
+      if (this.game.board.isOver()){
+        window.alert(`${this.game.currentPlayer} wins!`)
+      }
+    }),500)
+      
+    
+   
 
   }
 
-  makeMove(square) {}
+
+
+  
+
+
+  makeMove(square) {
+    
+    this.game.playMove(square)
+  }
 
 }
 
