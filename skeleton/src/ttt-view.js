@@ -1,5 +1,9 @@
 class View {
-  constructor(game, el) {}
+  constructor(game, theContainer) {
+    this.game = game;
+    this.theContainer = theContainer;
+
+  }
 
   setupBoard() {}
   
