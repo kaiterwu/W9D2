@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const viewer = new View(gameInstance, viewElement);
   viewer.setupBoard();
+  viewer.bindEvents();
   window.viewer = viewer;
 
 
