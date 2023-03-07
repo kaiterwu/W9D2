@@ -1,3 +1,6 @@
+const Game = require ("../ttt_node/game.js") // require appropriate file
+
+
 class View {
   constructor(game, theContainer) {
     this.game = game;
@@ -37,15 +40,30 @@ class View {
     }
     const update = new Promise((resolve) => {
       if(true){
-        resolve(event.target.innerText = this.game.currentPlayer)
+        let newDiv = document.createElement("div");
+        newDiv.innerText = this.game.currentPlayer.toUpperCase();
+        resolve(event.target.append(newDiv));
       }
     })
 
     update.then(setTimeout(() => {
       if (this.game.board.isOver()){
-        window.alert(`${this.game.currentPlayer} wins!`)
+
+        window.alert(`${this.game.currentPlayer.toUpperCase()} wins!`)
+
+
+        const viewElement = document.querySelector(".ttt")
+        let newGame = new Game();
+        let newView = new View(newGame, viewElement);
+        window.viewer = newView
+
+
+        let currentGrid = document.getElementsByClassName('playgrid')[0]
+        currentGrid.remove();
+        window.viewer.setupBoard();
+        window.viewer.bindEvents();
       }
-    }),500)
+    }),1000)
       
     
    

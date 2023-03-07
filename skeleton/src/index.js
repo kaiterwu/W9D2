@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const gameInstance = new Game();
   // gameInstance.run()
-  const viewer = new View(gameInstance, viewElement);
+  let viewer = new View(gameInstance, viewElement);
   viewer.setupBoard();
   viewer.bindEvents();
   window.viewer = viewer;
