@@ -18,8 +18,9 @@
     background-color: rgb(255, 167, 59);
     aspect-ratio: 1/1;
     color: rgb(255, 255, 255);
-    font-size: 20.5vw;
+    /* font-size: 20.5vw; */
     border-radius: 10px;
+    font-size: clamp(90px, 20vw, 160px);
     
 }
 
@@ -28,6 +29,8 @@ li div {
     justify-content: center;
     align-items:start;
     max-height: 200px;
+    max-width: 192px;
+    font-size:inherit;
 }
 
 figure{
