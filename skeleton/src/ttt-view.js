@@ -49,7 +49,11 @@ class View {
     update.then(setTimeout(() => {
       if (this.game.board.isOver()){
 
+        if(this.game.board.winner()){
         window.alert(`${this.game.currentPlayer.toUpperCase()} wins!`)
+        }else{
+          window.alert("Draw!")
+        }
 
 
         const viewElement = document.querySelector(".ttt")
